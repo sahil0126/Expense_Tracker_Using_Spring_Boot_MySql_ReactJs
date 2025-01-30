@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { listExpense,deleteExpense} from "../services/ExpenseService";
+import { exportToExcel,exportToPdf } from "../utils/exportfileUtils";
 
 const ListExpenseComponent = () => {
   const [expenses, setExpenses] = useState([]);
@@ -47,6 +48,14 @@ const ListExpenseComponent = () => {
       <button className="btn btn-primary mb-2" onClick={addNewExpense}>
         Add Expense
       </button>
+
+      <button onClick={()=>exportToExcel(expenses)} className="btn btn-success"  >Download Excel File</button>
+      
+      
+      <button onClick={()=>exportToPdf(expenses)}   className="btn btn-danger"  >Download Pdf </button>
+
+      
+
 
       <table className="table table-hover table-bordered table-striped">
         <thead>
