@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+@CrossOrigin("*")
 @RestController
-@RequestMapping("/expense_tracker")
+@RequestMapping("/expense-tracker")
 public class ExpenseController {
 
 
@@ -43,7 +45,7 @@ public class ExpenseController {
 
     //GET
     //Fetch All
-    @GetMapping("/expenses")
+    @GetMapping("/all-expenses")
     public ResponseStructure<List<Expense>> fetchAllExpense() {
         return expenseService.fetchAllExpense();
     }
