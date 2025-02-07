@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { listExpense,deleteExpense} from "../services/ExpenseService";
 import { exportToExcel,exportToPdf } from "../utils/exportfileUtils";
+import { FaDownload } from "react-icons/fa6";
 
 const ListExpenseComponent = () => {
   const [expenses, setExpenses] = useState([]);
@@ -43,16 +44,21 @@ const ListExpenseComponent = () => {
   }
 
   return (
+    
     <div className="container">
       <h2 className="text-center">List of Expense</h2>
-      <button className="btn btn-primary mb-2" onClick={addNewExpense}>
+     
+     <div className="container">
+
+      <button className="btn btn-primary mb-3  m-2 " onClick={addNewExpense}>
         Add Expense
       </button>
 
-      <button onClick={()=>exportToExcel(expenses)} className="btn btn-success"  >Download Excel File</button>
+      <button onClick={()=>exportToExcel(expenses)} className="btn btn-light  mb-3 m-2  border border-dark "  > <FaDownload /> Excel File</button>
       
       
-      <button onClick={()=>exportToPdf(expenses)}   className="btn btn-danger"  >Download Pdf </button>
+      <button onClick={()=>exportToPdf(expenses)}   className="btn btn-light mb-3  m-2 border border-dark"  > <FaDownload /> Pdf </button>
+     </div>
 
       
 
@@ -80,14 +86,15 @@ const ListExpenseComponent = () => {
               <td>{expense.payment_method}</td>
               <td>
                 <button
-                  className="btn btn-info"
+                  className="btn btn-info m-1"
                   onClick={() => updateExpense(expense.id)}
+                  
                 >
                   Update
                 </button>
 
                 <button
-                  className="btn btn-danger"
+                  className="btn btn-danger m-1"
                   onClick={() => removeExpense(expense.id)}
                   style={{ margin: "10" }}
                 >

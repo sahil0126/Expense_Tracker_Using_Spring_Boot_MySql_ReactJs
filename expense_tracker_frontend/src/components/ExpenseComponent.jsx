@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom";
 import { getExpense,updateExpense,createExpense } from "../services/ExpenseService";
+import toast from "react-hot-toast";
 
 
 const ExpenseComponent = () => {
@@ -64,6 +65,7 @@ const ExpenseComponent = () => {
                 .then((response) => {
                   console.log(response.data);
                   navigator("/expenses");
+                  toast.success("Expense Updated");
                 })
                 .catch((error) => {
                   console.error(error);
@@ -73,6 +75,7 @@ const ExpenseComponent = () => {
                 .then((response) => {
                   console.log(response.data);
                   navigator("/expenses");
+                  toast.success("Expense Added");
                 })
                 .catch((error) => {
                   console.error(error);

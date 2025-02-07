@@ -4,6 +4,8 @@ import FooterComponent from './components/FooterComponent'
 import ListExpenseComponent from './components/ListExpenseComponent'
 import ExpenseComponent from './components/ExpenseComponent'
 import { BrowserRouter, Route,Routes } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
+
 function App() {
 
 
@@ -34,6 +36,7 @@ function App() {
 
       </Routes>
       <FooterComponent/>
+      <Toaster/>
     </BrowserRouter>
     </>
 
