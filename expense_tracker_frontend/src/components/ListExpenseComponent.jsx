@@ -66,7 +66,7 @@ const ListExpenseComponent = () => {
       <table className="table table-hover table-bordered table-striped">
         <thead>
           <tr>
-            <th>Id</th>
+            {/* <th>Id</th> */}
             <th>Date</th>
             <th>Amount</th>
             <th>Category</th>
@@ -78,7 +78,7 @@ const ListExpenseComponent = () => {
         <tbody>
           {expenses.map((expense) => (
             <tr key={expense.id}>
-              <td>{expense.id}</td>
+              {/* <td>{expense.id}</td> */}
               <td>{expense.date}</td>
               <td>{expense.exp_amount}</td>
               <td>{expense.exp_category}</td>
