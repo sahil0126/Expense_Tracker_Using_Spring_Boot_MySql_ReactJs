@@ -22,7 +22,7 @@ function App() {
 
       <Routes>
 
-        <Route  path='/' element= {<ListExpenseComponent/>}>   </Route>
+        <Route  path='/' element= {<ListExpenseComponent/>}>  </Route>
 
         <Route  path='/expenses' element ={ <ListExpenseComponent/> }></Route>
        
